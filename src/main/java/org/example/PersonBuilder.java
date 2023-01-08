@@ -2,11 +2,11 @@ package org.example;
 import java.util.Objects;
 
 public class PersonBuilder {
-    protected String name;
-    protected String surname;
-    protected String address;
-    protected int age;
-    String t = (String) null;
+    private String name;
+    private String surname;
+    private String address;
+    private int age;
+    String number = (String) null;
 
     public PersonBuilder setName(String name) {
         if (this.name == null) {
@@ -47,10 +47,8 @@ public class PersonBuilder {
                     return new Person(name, surname);
                 }
             }
-        } else {
-            System.out.println(new IllegalStateException("Не задано одно из обязательных полей: Имя и/или фамилия"));
-            return new Person(name, surname);
         }
-        return new Person(name, surname);
+
+        return person;
     }
 }

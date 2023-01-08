@@ -8,9 +8,7 @@ public class Main {
     public static void main(String[] args) {
         Person mom = new PersonBuilder()
                 .setName("Лилия")
-                .setName("Ольга")
                 .setSurname("Георг")
-                .setSurname("Комаревцева")
                 .setAge(31)
                 .setAddress("Москва")
                 .build();
@@ -18,7 +16,6 @@ public class Main {
                 .setName("Алексей")
                 .build();
         mom.happyBirthday();
-
         System.out.println("У " + mom + " есть сын, " + son);
 
         try {

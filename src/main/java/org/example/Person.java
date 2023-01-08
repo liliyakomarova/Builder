@@ -29,8 +29,8 @@ public class Person {
     }
 
     public boolean hasAddress() {
-        String t = (String) null;
-        if (Objects.hashCode(address) != Objects.hashCode(t)) {
+        String number = (String) null;
+        if (Objects.hashCode(address) != Objects.hashCode(number)) {
             return true;
         }
         return false;
