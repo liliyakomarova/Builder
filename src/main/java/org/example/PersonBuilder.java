@@ -1,5 +1,4 @@
 package org.example;
-import java.util.Objects;
 
 public class PersonBuilder {
     private String name;
@@ -37,18 +36,14 @@ public class PersonBuilder {
         return this;
     }
 
-    public Person build() {
-        Person person = new Person(this.name, this.surname, this.age, this.address);
-        if (surname != null && name != null) {
-            if (person.hasAge()) {
-                if ((age > 0) && (age < 100)) {
-                    return new Person(name, surname, age, address);
-                } else if (age == 0) {
-                    return new Person(name, surname);
-                }
-            }
-            return new Person(name, surname);
-        }
+    public Person build() throws IllegalStateException {
+        Person person;
+        if (name == null || surname == null)
+            throw new IllegalStateException("Имя и фамилия не указаны");
+        if (age < 0) {
+            person = new Person(name, surname, age);
+        } else person = new Person(name, surname, age);
+        person.setAddress(address);
         return person;
     }
 }

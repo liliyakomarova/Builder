@@ -1,7 +1,5 @@
 package org.example;
-import java.nio.charset.StandardCharsets;
 import java.util.Objects;
-import java.util.OptionalInt;
 
 public class Person {
     protected final String name;
@@ -9,7 +7,7 @@ public class Person {
     protected String address = (String) null;
     protected int age;
 
-    public Person(String name, String surname) {
+    public Person(String name, String surname, int age) {
         this.name = name;
         this.surname = surname;
     }
@@ -82,5 +80,9 @@ public class Person {
         child.setSurname(surname);
         child.setAddress(address);
         return child;
+    }
+
+    public void setAddress(String address) {
+        this.address = address;
     }
 }
