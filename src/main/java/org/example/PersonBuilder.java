@@ -41,14 +41,14 @@ public class PersonBuilder {
         Person person = new Person(this.name, this.surname, this.age, this.address);
         if (surname != null && name != null) {
             if (person.hasAge()) {
-                if (age > 0 && age < 100) {
+                if ((age > 0) && (age < 100)) {
                     return new Person(name, surname, age, address);
                 } else if (age == 0) {
                     return new Person(name, surname);
                 }
             }
+            return new Person(name, surname);
         }
-
         return person;
     }
 }
